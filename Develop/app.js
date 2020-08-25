@@ -18,6 +18,7 @@ let employees = [];
 // then user can add more employees that are engineers or interns
 
 function promptUser() {
+  console.log("Enter Manager's information.")
   return inquirer
     .prompt([
       {
@@ -27,13 +28,12 @@ function promptUser() {
       },
       {
         type: "input",
-        message: "Enter Manager Email:",
-        name: "email",
-      },
-      {
-        type: "input",
         message: "Enter Manager ID:",
         name: "id",
+      },   {
+        type: "input",
+        message: "Enter Manager Email:",
+        name: "email",
       },
       {
         type: "input",
@@ -44,13 +44,14 @@ function promptUser() {
     .then(function (info) {
       const manager = new Manager(
         info.name,
-        info.email,
         info.id,
+        info.email,        
         info.officeNumber
       );
       employees.push(manager);
     })
     .then(function addEmployee() {
+      console.log("Enter new Employee's information.")
       return inquirer
         .prompt([
           {
@@ -72,13 +73,13 @@ function promptUser() {
                   },
                   {
                     type: "input",
-                    message: "Enter Employee Email:",
-                    name: "email",
+                    message: "Enter Employee ID:",
+                    name: "id",
                   },
                   {
                     type: "input",
-                    message: "Enter Employee ID:",
-                    name: "id",
+                    message: "Enter Employee Email:",
+                    name: "email",
                   },
                   {
                     type: "input",
@@ -95,8 +96,8 @@ function promptUser() {
                 .then(function (info) {
                   const engineer = new Engineer(
                     info.name,
-                    info.email,
                     info.id,
+                    info.email,                    
                     info.github
                   );
                   employees.push(engineer);
@@ -118,13 +119,13 @@ function promptUser() {
                   },
                   {
                     type: "input",
-                    message: "Enter Employee Email:",
-                    name: "email",
+                    message: "Enter Employee ID:",
+                    name: "id",
                   },
                   {
                     type: "input",
-                    message: "Enter Employee ID:",
-                    name: "id",
+                    message: "Enter Employee Email:",
+                    name: "email",
                   },
                   {
                     type: "input",
@@ -141,8 +142,8 @@ function promptUser() {
                 .then(function (info) {
                   const intern = new Intern(
                     info.name,
-                    info.email,
                     info.id,
+                    info.email,
                     info.school
                   );
                   employees.push(intern);
@@ -173,7 +174,7 @@ promptUser().then(function () {
   let html = render(employees);
   fs.writeFile(outputPath, html, (err) => {
     if (err) throw err;
-    console.log("The file has been saved!");
+    console.log("Team profile generated.");
   });
 });
 
