@@ -42,8 +42,9 @@
   
   You will install the dependencies, then run via node app.js. Once you are the prompt, you will input information based on prompts. You can to continue to add a new employees (egineers or interns) by selecting yes when asked to add another team member, or select no to exit and genrate the team profile. Once the cli is complete a html file will be generated based on the information entered.
 
-  <iframe src="https://drive.google.com/file/d/1So32Gi4QFBdHf2Y9flgPvyeRKbPZPCke/preview" width="640" height="480"></iframe>
-  
+  [Watch Video for example of usage.](https://drive.google.com/file/d/1So32Gi4QFBdHf2Y9flgPvyeRKbPZPCke/view?usp=sharing)
+
+   
   <hr>
   
   ## Resources <a name="resources"></a>
